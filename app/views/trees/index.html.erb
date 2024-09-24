@@ -1,0 +1,22 @@
+
+<%= stylesheet_link_tag "trees"%>
+<div class="container">
+
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Trees" %>
+
+<h1>Welcome To Linktree</h1>
+
+
+<div id="trees">
+  <% @trees.each do |tree| %>
+    <%= render tree %>
+    <p>
+      <%= link_to "Show this tree", tree %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New tree", new_tree_path %>
+</div>

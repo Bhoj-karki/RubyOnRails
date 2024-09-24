@@ -1,0 +1,38 @@
+
+<%= stylesheet_link_tag "devise"%>
+
+<div class="sighnup-page">
+  <h1>Join Linktree</h1>
+
+<h2>Sign up for free</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email, class:"label" %><br />
+   
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input"%>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class:"label" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class:"input" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, class:"label" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"input" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create an account", class:"button" %>
+  </div>
+<% end %>
+
+  <p>By clicking create an account, You agree to linktree's Terms and Conditions and confirm you read our Privacy Notice.</p>
+<%= render "devise/shared/links" %>
+</div>
